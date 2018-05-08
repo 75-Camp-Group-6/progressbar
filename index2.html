@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loader</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <div id="progress-circle"></div>
+  <div id="progress-triangle">
+    <div class="progress-triangle-container">
+      <div class="progress-triangle"></div>
+      <div class="progress-triangle-inner"></div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+  <script>
+    const progressBar = new ProgressBar('progress-bar')
+    progressBar.update(0.5)
+    const progressCircle = new ProgressCircle('progress-circle')
+    progressCircle.update(0.5)
+    const progressTriangle = new ProgressTriangle('progress-triangle')
+    progressTriangle.update(0.7)
+  </script>
+
+</body>
+</html>
