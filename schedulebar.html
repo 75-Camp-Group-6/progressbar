@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by anonymous (http://jsbin.com/xowegineyo/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+#wrapper{
+    position: relative;
+    width:200px;
+    height:100px;
+    border:1px solid darkgray;
+}
+#progressbar{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-90px;
+    margin-top:-10px;
+    width:180px;
+    height:19px;
+    border:1px solid darkgray;
+
+}
+
+#fill{
+    animation: move 2s;
+    text-align: center;
+    background-color: #6caf00;
+}
+
+@keyframes move {
+    0%{
+        width:0;
+
+    }
+    100%{
+        width:100%;
+    }
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="progressbar">
+        <div id="fill"></div>
+    </div>
+</div>
+<script id="jsbin-javascript">
+var progressbar={
+    init:function(){
+        var fill=document.getElementById('fill');
+        var count=0;
+        var timer=setInterval(function(e){
+            count++;
+            fill.innerHTML=count+'%';
+            if(count===100) clearInterval(timer);
+        },17);
+    }
+};
+progressbar.init();
+</script>
+</body>
+</html>
